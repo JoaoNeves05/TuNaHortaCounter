@@ -1,8 +1,8 @@
+import { router } from "expo-router";
 import { get, ref } from "firebase/database";
 import { useState } from "react";
 import { Alert, Button, ImageBackground, Text, TextInput, View } from "react-native";
-import { db } from "./firebase";
-import { router } from "expo-router";
+import { db } from "../.expo/lib/firebase";
 
 export default function Home() {
   const [code, setCode] = useState("");

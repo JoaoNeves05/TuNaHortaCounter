@@ -1,8 +1,8 @@
 // App.js
+import { onValue, ref, runTransaction } from "firebase/database";
 import { useEffect, useState } from "react";
-import { Text, View, Button, ImageBackground } from "react-native";
-import { db } from "./firebase";
-import { ref, onValue, set, runTransaction } from "firebase/database";
+import { Button, ImageBackground, Text, View } from "react-native";
+import { db } from "../.expo/lib/firebase";
 
 export default function Contador() {
   const [count, setCount] = useState(0);
