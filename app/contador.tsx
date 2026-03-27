@@ -20,9 +20,9 @@ export default function Contador() {
     return () => unsubscribe();
   }, []);
 
-  const increment = () => {
+  const increment = (amount: number) => {
     runTransaction(countRef, (current) => {
-        return (current || 0) + 1;
+        return (current || 0) + amount;
         });
     };
 
@@ -52,9 +52,11 @@ export default function Contador() {
       <Text style={{ fontSize: 50, color: "#fff" }}>{count} 🍺</Text>
 
       <View style={{ marginTop: 20 }}>
-        <Button title="Drink Up 🍺" onPress={increment} />
+        <Button title="Fino" onPress={() => increment(1)} />
       </View>
-
+      <View style={{ marginTop: 20 }}>
+        <Button title="Caneca" onPress={() => increment(2)} />
+      </View>
       <View style={{ marginTop: 10 }}>
         <Button title="Enganei-me" onPress={decrement} />
       </View>
